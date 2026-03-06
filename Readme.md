@@ -1,4 +1,4 @@
-# Chaotic Image Watermarking – Assignment Implementation
+# Chaotic Image Watermarking – Implementation
 
 This repository contains a **Python implementation of a chaotic system based fragile watermarking scheme for image tamper detection**.
 
