@@ -3,7 +3,7 @@ from PIL import Image
 
 from watermarking import Watermarking
 from metrics import psnr
-
+import os
 
 
 host_img = Image.open("host.png").convert('L')
@@ -65,4 +65,16 @@ for a in ax.flatten():
     a.axis("off")
 
 plt.tight_layout()
+
+
+import os
+
+os.makedirs("results", exist_ok=True)
+
+plt.imsave("results/original_image.png", host, cmap="gray")
+plt.imsave("results/watermarked_image.png", watermarked, cmap="gray")
+plt.imsave("results/tampered_image.png", tampered, cmap="gray")
+plt.imsave("results/original_watermark.png", watermark, cmap="gray")
+plt.imsave("results/extracted_watermark.png", recovered, cmap="gray")
+plt.imsave("results/detected_tamper.png", tamper_map, cmap="hot")
 plt.show()
